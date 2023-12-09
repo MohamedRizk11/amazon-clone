@@ -1,6 +1,7 @@
 Prodcut :
 - name 
 - image 
+- images 
 - flag 
 - review :
     - image 
@@ -11,7 +12,11 @@ Prodcut :
 
 - price 
 - sku 
-- brand 
+- brand :
+    - name 
+    - image 
+    - product count 
+
 - rewiews count 
 - subtitle 
 - tags 
