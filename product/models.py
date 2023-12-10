@@ -13,7 +13,7 @@ Flag_type=(
 )
 class Product (models.Model):
     name = models.CharField(_('Name'),max_length=20)
-    flag = models.CharField(_('Flag'),max_length=10,choices='Flag_type')
+    flag = models.CharField(_('Flag'),max_length=10,choices=Flag_type)
     image = models.ImageField(_('Image'),upload_to='products')
     price = models.FloatField(_('Price'),)
     sku = models.CharField(_('SKU'),max_length=12)
@@ -41,8 +41,8 @@ class Productimage(models.Model):
     def __str__(self):
         return str(self.product)
 class Review(models.Model):
-    user = models.ForeignKey(User, verbose_name=_('User'),related_name='review_author', on_delete=models.SET_NULL)
-    product= models.ForeignKey(Product,verbose_name=_('Product'),related_name='review _product',on_delete=models.CASCADE)
+    user = models.ForeignKey(User, verbose_name=_('User'),related_name='review_author', on_delete=models.SET_NULL,null=True)
+    product= models.ForeignKey(Product,verbose_name=_('Product'),related_name='review_product',on_delete=models.CASCADE)
     rate = models.IntegerField(_('Rate'),)
     review = models.CharField(_('Review'),max_length=300)
     created_at= models.DateTimeField(_('Created at'),default=timezone.now)
