@@ -1,3 +1,1 @@
 # amazon-clone
-mmmmm
-pppp 
