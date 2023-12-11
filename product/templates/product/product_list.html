@@ -363,7 +363,7 @@
                             {% for object in object_list %}
                             
 
-                                <div class="col">
+                                <div class="col" href="">
                                     <div class="product-card">
                                         <div class="product-media">
                                             <div class="product-label">
@@ -372,7 +372,7 @@
                                             <button class="product-wish wish">
                                                 <i class="fas fa-heart"></i>
                                             </button>
-                                            <a class="product-image" href="product-video.html">
+                                            <a class="product-image" href="/products/{{object.id}}">
                                                 <img src="{{object.image.url}}" style="width:178px;height:190px;"alt="product">
                                             </a>
                                             <div class="product-widget">
@@ -391,7 +391,7 @@
                                                 <a href="{{object.rate}}">(4)</a>
                                             </div>
                                             <h6 class="product-name">
-                                                <a href="product-video.html">{{object.name}}</a>
+                                                <a href="/products/{{object.id}}">{{object.name}}</a>
                                             </h6>
                                             <h6 class="product-price">
                                                 
