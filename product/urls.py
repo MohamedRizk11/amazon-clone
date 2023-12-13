@@ -7,7 +7,7 @@ from . views import ProductDetail,Productliist
 urlpatterns=[
 
 path('',Productliist.as_view()),
-path('<int:pk>',ProductDetail.as_view()),
+path('<slug:slug>',ProductDetail.as_view()),
 
 
 
