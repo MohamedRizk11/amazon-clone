@@ -19,3 +19,8 @@ class ProductDetail(DetailView):
         context["related_products"] =Product.objects.filter(brand=self.get_object().brand)
         return context
     
+
+
+class Brandlist(ListView):
+     model = Brand  
+    
