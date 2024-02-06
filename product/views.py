@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Product,Productimage, Brand ,Review
+from django.db.models.aggregates import Max, Count
 # Create your views here.
 
 def quaryset_debug(request):
-    data = Product.objects.all()
+    data = Product.objects.select_related('brand').all()
     return render(request,'product/debug.html',{'data':data})
 
 
@@ -29,6 +30,10 @@ class ProductDetail(DetailView):
 
 class Brandlist(ListView):
     model = Brand  
+    quaryset= Brand.objects.annotate(count=Count('product_brand'))
+
+ 
+
 
 
 class Brandetail(ListView):
