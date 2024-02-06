@@ -3,6 +3,12 @@ from django.views.generic import ListView, DetailView
 from .models import Product,Productimage, Brand ,Review
 # Create your views here.
 
+def quaryset_debug(request):
+    data = Product.objects.all()
+    return render(request,'product/debug.html',{'data':data})
+
+
+
 
 class Productliist(ListView):
     model = Product
