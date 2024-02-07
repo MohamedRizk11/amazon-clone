@@ -21,7 +21,7 @@ class Product (models.Model):
     sku = models.CharField(_('SKU'),max_length=12)
     subtitle =models.CharField(_('Subtitle'),max_length=400)
     description = models.TextField(_('Description'),max_length=40000)
-    quantity = models.IntegerField(_('Quantity'),)
+    quantity = models.IntegerField(_('Quantity'))
     brand = models.ForeignKey('Brand',verbose_name=_('Brand'), related_name='product_brand', on_delete=models.SET_NULL,null=True)
     tags = TaggableManager()
     slug = models.SlugField(null=True,blank=True)

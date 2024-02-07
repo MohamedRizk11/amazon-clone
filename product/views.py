@@ -30,7 +30,7 @@ class ProductDetail(DetailView):
 
 class Brandlist(ListView):
     model = Brand  
-    quaryset= Brand.objects.annotate(count=Count('product_brand'))
+    queryset= Brand.objects.annotate(product_count=Count('product_brand'))
 
  
 
@@ -47,6 +47,6 @@ class Brandetail(ListView):
     
     def get_context_data(self, **kwargs) :
         context = super().get_context_data(**kwargs)
-        context["brand"] = Brand.objects.get(slug=self.kwargs['slug'])
+        context["brand"] = Brand.objects.filter(slug=self.kwargs['slug']).annotate(product_count=Count('product_brand'))[0]
         return context
     
