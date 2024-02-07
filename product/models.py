@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
+from django.db.models.aggregates import Avg
 # Create your models here.
 
 Flag_type=(
@@ -28,6 +29,14 @@ class Product (models.Model):
 
     def __str__(self):
         return self.name
+    
+    def avg_rate(self):
+        avg = self.review_product.aggregate(rate_avg=Avg('rate')) 
+        if not avg['rate_avg']:
+            result =0 
+            return result
+        return avg['rate_avg']
+            
     def save(self, *args, **kwargs):
        self.slug=slugify(self.name)
        super(Product, self).save(*args, **kwargs) # Call the real save() method
