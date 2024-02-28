@@ -4,9 +4,9 @@ from django.db.models import Count
 
 # Create your views here.
 def Home(request):
-    brands=Brand.objects.all(). annotate(product_count=Count('product_brand'))
+    brands=Brand.objects.all().annotate(product_count=Count('product_brand'))
     sale_products= Product.objects.filter(flag='Sale')[:10]
-    featured_products= Product.objects.filter(flag='Featured')[:6]
+    featured_products= Product.objects.filter(flag='Feature')[:6]
     new_products= Product.objects.filter(flag='New')[:10]
     reviews= Review.objects.all()[:5]
 
@@ -21,4 +21,4 @@ def Home(request):
 
 
 
-    })
+        })
