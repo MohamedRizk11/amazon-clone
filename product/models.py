@@ -62,7 +62,7 @@ class Productimage(models.Model):
 class Review(models.Model):
     user = models.ForeignKey(User, verbose_name=_('User'),related_name='review_author', on_delete=models.SET_NULL,null=True)
     product= models.ForeignKey(Product,verbose_name=_('Product'),related_name='review_product',on_delete=models.CASCADE)
-    rate = models.IntegerField(_('Rate'),)
+    rate = models.IntegerField(_('Rate'))
     review = models.CharField(_('Review'),max_length=300)
     created_at= models.DateTimeField(_('Created at'),default=timezone.now)
 

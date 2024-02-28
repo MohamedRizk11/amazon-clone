@@ -13,7 +13,7 @@ def quaryset_debug(request):
 
 class Productliist(ListView):
     model = Product
-
+    paginate_by = 20
 
 
 class ProductDetail(DetailView):
