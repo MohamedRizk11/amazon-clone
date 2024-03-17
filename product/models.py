@@ -8,10 +8,10 @@ from django.db.models.aggregates import Avg
 # Create your models here.
 
 Flag_type=(
-    ('Sale ','Sale'),
-    ('New ','New'),
+    
+    ('New','New'),
     ('Feature','Feature'),
-
+    ('Sale','Sale'),
 
 )
 class Product (models.Model):

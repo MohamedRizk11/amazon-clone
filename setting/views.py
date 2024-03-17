@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from product.models import Product,Brand,Review
 from django.db.models import Count
+from product.models import Product,Brand,Review
+
 
 # Create your views here.
 def Home(request):
