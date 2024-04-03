@@ -23,7 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', include('product.urls')),
     path('', include('setting.urls')),
-
     path("__debug__/", include("debug_toolbar.urls")),
 
 ]
