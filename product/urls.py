@@ -1,6 +1,6 @@
 from django.urls import path 
 from . views import ProductDetail,Productliist ,Brandlist ,Brandetail,quaryset_debug
-from .api import product_list_api,product_detail_api,productlistapi,productdetailapi
+from .api import product_list_api,product_detail_api,productlistapi,productdetailapi,brandlistapi,branddetailapi
 
 
 
@@ -15,5 +15,6 @@ path('brands/<slug:slug>/',Brandetail.as_view()),
 #api 
 path('api/list',productlistapi.as_view()),
 path('api/list/<int:pk>',productdetailapi.as_view()),
-
+path('api/detail',brandlistapi.as_view()),
+path('api/detail/<int:pk>',branddetailapi.as_view()),
 ]
