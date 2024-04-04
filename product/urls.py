@@ -15,6 +15,6 @@ path('brands/<slug:slug>/',Brandetail.as_view()),
 #api 
 path('api/list',productlistapi.as_view()),
 path('api/list/<int:pk>',productdetailapi.as_view()),
-path('api/detail',brandlistapi.as_view()),
-path('api/detail/<int:pk>',branddetailapi.as_view()),
+path('brands/api/list',brandlistapi.as_view()),
+path('brands/api/list/<int:pk>',branddetailapi.as_view()),
 ]
